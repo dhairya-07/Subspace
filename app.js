@@ -86,7 +86,7 @@ function analyseData(data) {
   return {
     total: data.length,
     longestTitleBlog: longestTitleBlog,
-    titlesContainingPrivacy: blogsWithPrivacy,
+    titlesContainingPrivacy: blogsWithPrivacy.length,
     uniques: uniqueTitles,
   };
 }
