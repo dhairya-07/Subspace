@@ -43,7 +43,7 @@ const fs = require('fs');
 //   next();
 // };
 
-// app.get('/search', analyseData, async (req, res) => {
+// app.get('/api/blog-stats', analyseData, async (req, res) => {
 //   return res.status(200).json({
 //     data: {
 //       analytics: res.locals.analytics,
@@ -91,7 +91,7 @@ function analyseData(data) {
   };
 }
 
-app.get('/search', async (req, res) => {
+app.get('/api/blog-stats', async (req, res) => {
   const memoizeAnaltyicsData = _.memoize(analyseData);
   try {
     const data = await fetchData();
@@ -107,7 +107,7 @@ app.get('/search', async (req, res) => {
   });
 });
 
-app.get('/blog-search', async (req, res) => {
+app.get('/api/blog-search', async (req, res) => {
   const { query } = req.query;
   try {
     const data = await fetchData();
